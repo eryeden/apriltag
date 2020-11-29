@@ -40,29 +40,29 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 
-# install library
-install(TARGETS ${PROJECT_NAME} EXPORT apriltagTargets
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
+# # install library
+# install(TARGETS ${PROJECT_NAME} EXPORT apriltagTargets
+#     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+# )
 
-# install header file hierarchy
-file(GLOB_RECURSE HEADER_FILES RELATIVE ${CMAKE_SOURCE_DIR} *.h)
-foreach(HEADER ${HEADER_FILES})
-    string(REGEX MATCH "(.*)[/\\]" DIR ${HEADER})
-    install(FILES ${HEADER} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${DIR})
-endforeach()
+# # install header file hierarchy
+# file(GLOB_RECURSE HEADER_FILES RELATIVE ${CMAKE_SOURCE_DIR} *.h)
+# foreach(HEADER ${HEADER_FILES})
+#     string(REGEX MATCH "(.*)[/\\]" DIR ${HEADER})
+#     install(FILES ${HEADER} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${DIR})
+# endforeach()
 
-# export library
-install(EXPORT apriltagTargets
-    FILE apriltagTargets.cmake
-    NAMESPACE apriltag::
-    DESTINATION share/apriltag/cmake
-)
-install(FILES CMake/apriltagConfig.cmake DESTINATION share/apriltag/cmake)
-export(TARGETS apriltags
-    NAMESPACE apriltag::
-    FILE apriltagTargets.cmake)
+# # export library
+# install(EXPORT apriltagTargets
+#     FILE apriltagTargets.cmake
+#     NAMESPACE apriltag::
+#     DESTINATION share/apriltag/cmake
+# )
+# install(FILES CMake/apriltagConfig.cmake DESTINATION share/apriltag/cmake)
+# export(TARGETS apriltags
+#     NAMESPACE apriltag::
+#     FILE apriltagTargets.cmake)
 
 #FILE(READ apriltag.pc.in PKGC)
 #STRING(REGEX REPLACE "^prefix=" "prefix=${CMAKE_INSTALL_PREFIX}" PKGC_CONF "${PKGC}" )
