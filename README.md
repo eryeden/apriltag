@@ -1,3 +1,6 @@
+Forked from https://github.com/tgRobotics/apriltag.
+
+
 AprilTag 3
 ==========
 AprilTag is a visual fiducial system popular in robotics research. This repository contains the most recent version of AprilTag, AprilTag 3, which includes a faster (>2x) detector, improved detection rate on small tags, flexible tag layouts, and pose estimation. AprilTag consists of a small C library with minimal dependencies.
